@@ -14,7 +14,7 @@ void QuickSort::sort(Data* data, int n, int (*compar)(Contact&, Contact&)) {
 
 void QuickSort::quickSort(Data* data, int first, int last, int (*compar)(Contact&, Contact&)) {
 	if (first < last) {
-		int middle = partition(data, first, last, (*compar));
+		int middle = partition(data, first, last, (*compar));//partioning around a pivot
 		if (first < middle - 1) {
 			quickSort(data, first, middle - 1, (*compar));
 		}
@@ -33,13 +33,13 @@ int QuickSort::partition(Data* data, int first, int last, int (*compar)(Contact&
 	Contact pivotCandidate2("","",0);
 	Contact pivotCandidate3("","",0);
 	int rand1,rand2,rand3;
-	rand1 = rand() % (last-first+1) + first;
+	rand1 = rand() % (last-first+1) + first;//median of 3
 	rand2 = rand() % (last-first+1) + first;
 	rand3 = rand() % (last-first+1) + first;
 	pivotCandidate1 = data->array[rand1];
 	pivotCandidate2 = data->array[rand2];
 	pivotCandidate3 = data->array[rand3];
-	if (compar(pivotCandidate2, pivotCandidate1) <= 0
+	if (compar(pivotCandidate2, pivotCandidate1) <= 0//median of 3
 		&& compar(pivotCandidate1, pivotCandidate3) <= 0) {
 		pivot = pivotCandidate1;
 		i = rand1;
@@ -53,10 +53,10 @@ int QuickSort::partition(Data* data, int first, int last, int (*compar)(Contact&
 		pivot = pivotCandidate3;
 		i = rand3;
 	}
-	swap(data->array[first],data->array[i]);
+	swap(data->array[first],data->array[i]);//pivot switches with first element
 	i = first;
 	for (j = i + 1; j < last + 1; j++) {
-		if (compar( data->array[j], pivot) <= 0) {
+		if (compar( data->array[j], pivot) <= 0) {//if j pointer is smaller
 			i++;
 			swap(data->array[j], data->array[i]);
 		}
