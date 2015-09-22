@@ -5,7 +5,7 @@ CFLAGS = -g -I/usr/local/include -DPRINT -std=c++0x
 LDIR =
 LIBS =
 
-OBJ = Contact.o Experiment.o Data.o SelectionSort.o MergeSort.o main.o
+OBJ = Contact.o Experiment.o Data.o SelectionSort.o MergeSort.o QuickSort.o main.o
 
 test: $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LDIR) $(LIBS)
