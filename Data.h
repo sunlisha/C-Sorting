@@ -24,7 +24,6 @@ private:
 public:
     vector<Contact> array;    // Data that can be modified
     void refresh();
-    void replace( vector<Contact> );
     void print( int, int );   // print [start...start+n]
     Data( string );           // constructor
 };

@@ -50,10 +50,6 @@ void Data::refresh() {
     array = original;
 }
 
-//--------------------------------------------
-void Data::replace(vector<Contact> A) {
-    array = A;
-}
 
 // print(int start, int size): print array[start] to array[start+size] to
 //   the screen.

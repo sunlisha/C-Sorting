@@ -28,7 +28,7 @@ int main() {
     // The columns in Result.txt will be in the same order as the calls to AddAlgorithm()
     experiment.addAlgorithm(new SelectionSort());
     experiment.addAlgorithm(new MergeSort());
-    //experiment.addAlgorithm(new QuickSort());
+    experiment.addAlgorithm(new QuickSort());
     
     experiment.run();
     experiment.save("Results.txt");
